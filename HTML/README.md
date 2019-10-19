@@ -91,31 +91,31 @@ USA
 </address>
 ```
 
-首字母缩写，单词简写
+:star:首字母缩写，单词简写
 ```html
 <abbr title="etcetera">etc.</abbr>
 <br />
 <acronym title="World Wide Web">WWW</acronym>
 ```
 
-文字从右往左显示
+:star:文字从右往左显示
 ```html
 <p><bdo dir="rtl">该段落文字从右到左显示。</bdo></p>  
 ```
 
 
-引用文字,,显示出来带引号
+:star:引用文字,,显示出来带引号
 ```html
 <q>Build a future where people live in harmony with nature.</q>
 ```
 
-删除文字和插入文字
+:star:删除文字和插入文字
 ```html
 <del>blue</del> <ins>red</ins>
 ```
 
 
-链接target属性
+:star:链接target属性
 ```html
 _blank	在新窗口中打开被链接文档。
 _self	默认。在相同的框架中打开被链接文档。
@@ -131,7 +131,7 @@ _top	在整个窗口中打开被链接文档。
 ```
 
 电子邮件1
-````html
+```html
 <p>
 这是一个电子邮件链接：
 <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">
@@ -165,7 +165,7 @@ meta元素
 </head>
 ```
 
-表格
+:star:表格
 ```html
 单元格可以嵌入别的代码
 
@@ -216,6 +216,7 @@ cellpadding="10">   --设置单元格的内边距
     
 
 :star:有序列表 
+      
 ```html
 
 默认的列表
@@ -240,7 +241,7 @@ cellpadding="10">   --设置单元格的内边距
 <ol type="i">
 ```    
 
-无序列表
+:star:无序列表
   
 ```html
 <ul style="list-style-type:disc">
@@ -268,7 +269,7 @@ cellpadding="10">   --设置单元格的内边距
 ```
   
 
-  :star: 表单
+:star: 表单
   ```html
   --文本和密码字段
 <form action="">
@@ -294,8 +295,30 @@ Password: <input type="password" name="password">
 </select>
   ```
   
-  
-  
+  label标签
+  ```html
+  <label for="male">Male</label>
+  <input type="radio" name="sex" id="male" value="male"><br>
+```
+  fieldset 定义了一组相关的表单元素，并使用外框包含起来
+  ```html
+ <fieldset>
+  <legend>Personalia:</legend>  --制定了fieldset标签的标题
+  Name: <input type="text"><br>
+  Email: <input type="text"><br>
+  Date of birth: <input type="text">
+ </fieldset>
+```
+
+output 定义了计算结果
+```html
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+<input type="range" id="a" value="50">100
++<input type="number" id="b" value="50">
+=<output name="x" for="a b"></output>
+</form>
+```
+[字符实体](https://www.runoob.com/html/html-entities.html)  
 
   
   
