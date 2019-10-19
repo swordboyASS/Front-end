@@ -1,55 +1,64 @@
 ### <a  id="top" href="#top">:closed_book:目录 </a>
 
+- [x] <a href="#01">**`CSS?`**</a>
+- [x] <a href="#02">**`语法`**</a>
+- [x] <a href="#03">**`ID和Class选择器`**</a>
 
 
-- [x] <a href="#01">**``**</a>
-- [x] <a href="#02">**``**</a>
-- [x] <a href="#03">**``**</a>
-- [x] <a href="#04">**``**</a>
-- [x] <a href="#05">**``**</a>
-- [x] <a href="#06">**``**</a>
-- [x] <a href="#07">**``**</a>
-- [x] <a href="#08">**``**</a>
+### &nbsp;&nbsp; <a id="01">CSS?</a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
 
-### &nbsp;&nbsp; <a id="01"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
+:star: name
 
-:star: 
+Cascading Style Sheets-层叠样式表。其用于装饰html元素,将网页变得更漂亮
 
 ---
-### &nbsp;&nbsp; <a id="02"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
+### &nbsp;&nbsp; <a id="02">语法</a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
 
-:star: 
+:star: html内的css
+```html
+<style>
+p {
+  color:red;
+}
+</style>
+```
 
----
-### &nbsp;&nbsp; <a id="03"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
+:star: 外部引入的css
+```html
+    <link rel="stylesheet" type="text/css" href="css.css">
+```
 
-:star: 
+:star: 内联的css
 
----
-### &nbsp;&nbsp; <a id="04"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
+```html
+<p style="color:skyblue">第一自然段<p/>
+```
 
-:star: 
+多重样式优先级:内联样式）Inline style > （内部样式）Internal style sheet >（外部样式）External style sheet > 浏览器默认样式
 
----
-### &nbsp;&nbsp; <a id="05"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
-
-:star: 
-
----
-### &nbsp;&nbsp; <a id="06"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
-
-:star: 
-
----
-### &nbsp;&nbsp; <a id="07"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
-
-:star:
-
-### &nbsp;&nbsp; <a id="08"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
-
-:star:
+css注释 : \/*注释内容\*/
 
 ---
+### &nbsp;&nbsp; <a id="03">ID和Class选择器</a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
+
+:star:  ID选择器
+```html
+#para1 {
+    text-align:center;
+    color:red;
+}
+```
+
+:star: Class选择器
+```html
+.center {text-align:center;}
+```
+
+```html
+p.center {text-align:center;}   --指定元素的类名
+```
+---
+
 
 
 
