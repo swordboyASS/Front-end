@@ -269,6 +269,9 @@ border:5px solid red;
 轮廓（outline）属性指定元素轮廓的样式、颜色和宽度。
 
 1. 在元素周围画线
+
+![div2](https://github.com/swordboyASS/Front-end/blob/master/CSS3/CSS/Picture/div2.png)
+
 ```css
 p 
 {
