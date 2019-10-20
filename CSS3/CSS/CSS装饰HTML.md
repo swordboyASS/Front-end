@@ -3,7 +3,7 @@
 
 
 - [x] <a href="#01">**`各种属性`**</a>
-- [x] <a href="#02">**``**</a>
+- [x] <a href="#02">**`边距`**</a>
 - [x] <a href="#03">**``**</a>
 - [x] <a href="#04">**``**</a>
 - [x] <a href="#05">**``**</a>
@@ -110,10 +110,173 @@ text-decoration:none; --去掉链接下划线
 
 :star:表格
 
----
-### &nbsp;&nbsp; <a id="02"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
+1. 边框,值得注意的是th,和td有单独的边框
+```css
+table,th,td
+{
+	border:1px solid black;
+}
+```
+2 折叠边框
+```css
+table
+{
+    border-collapse:collapse;
+}
+table,th, td
+{
+    border: 1px solid black;
+}
+```
+3.表格宽度，行高
+```css
+table 
+{
+    width:100%;
+}
+th
+{
+    height:50px;
+}
+```
 
-:star: 
+4. 表格文字对齐
+```css
+text-align属性设置水平对齐方式，向左，右，或中心：
+td
+{
+    text-align:right;
+}
+
+垂直对齐属性设置垂直对齐，比如顶部，底部或中间：
+td
+{
+    height:50px;
+    vertical-align:bottom;
+}
+
+```
+
+5. 表格内边距
+```css
+td
+{
+    padding:15px;
+}
+```
+
+6. 表格颜色
+```css
+table, td, th
+{
+    border:1px solid green;
+}
+th
+{
+    background-color:green;
+    color:white;
+}
+```
+
+
+
+---
+### &nbsp;&nbsp; <a id="02">边距</a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
+
+:star: 盒子模型
+所有HTML元素可以看作盒子，在CSS中，"box model"这一术语是用来设计和布局时使用。   
+CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。
+
+下面是模型说明
+![div1]()
+
+- Margin(外边距) - 清除边框外的区域，外边距是透明的。
+- Border(边框) - 围绕在内边距和内容外的边框。
+- Padding(内边距) - 清除内容周围的区域，内边距是透明的。
+- Content(内容) - 盒子的内容，显示文本和图像。
+
+```css
+--边框也可以设置颜色
+div {
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+}
+```
+
+:star:边框
+
+1. border-style:
+- dotted: 定义一个点线边框
+- dashed: 定义一个虚线边框
+- solid: 定义实线边框
+- double: 定义两个边框。 两个边框的宽度和 border-width 的值相同
+- groove: 定义3D沟槽边框。效果取决于边框的颜色值
+- ridge: 定义3D脊边框。效果取决于边框的颜色值
+- inset:定义一个3D的嵌入边框。效果取决于边框的颜色值
+- outset: 定义一个3D突出边框。 效果取决于边框的颜色值
+
+2. border-width
+```css
+p.one
+{
+    border-style:solid;
+    border-width:5px;
+}
+```
+
+3. border-color
+```css
+p.one
+{
+    border-style:solid;
+    border-color:red;
+}
+```
+
+4. border-'position'
+```css
+--单独设置边框各边
+p
+{
+    border-top-style:dotted;
+    border-right-style:solid;
+    border-bottom-style:dotted;
+    border-left-style:solid;
+}
+
+如果写4个样式:依次顺序为:上、右、下、左
+写3个样式:上、左右、下
+写2个样式:上下，左右
+其他可以分开写的参照此顺序
+```
+
+5. 简写规则:
+```css
+border-width
+border-style (required)
+border-color
+
+
+border:5px solid red;
+```
+
+
+:star:outline(轮廓)  [轮廓](https://www.runoob.com/css/css-outline.html)
+
+轮廓（outline）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。   
+轮廓（outline）属性指定元素轮廓的样式、颜色和宽度。
+
+1. 在元素周围画线
+```css
+p 
+{
+	border:1px solid red;
+	outline:green dotted thick;
+}
+```
+
 
 ---
 ### &nbsp;&nbsp; <a id="03"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
