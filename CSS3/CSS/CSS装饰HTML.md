@@ -188,7 +188,7 @@ th
 CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。
 
 下面是模型说明
-![div1]()
+![div1](https://github.com/swordboyASS/Front-end/blob/master/CSS3/CSS/Picture/div1.png)
 
 - Margin(外边距) - 清除边框外的区域，外边距是透明的。
 - Border(边框) - 围绕在内边距和内容外的边框。
