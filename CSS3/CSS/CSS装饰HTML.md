@@ -4,8 +4,8 @@
 
 - [x] <a href="#01">**`各种属性`**</a>
 - [x] <a href="#02">**`边距`**</a>
-- [x] <a href="#03">**``**</a>
-- [x] <a href="#04">**``**</a>
+- [x] <a href="#03">**`分组和嵌套选择器`**</a>
+- [x] <a href="#04">**`定位`**</a>
 - [x] <a href="#05">**``**</a>
 - [x] <a href="#06">**``**</a>
 - [x] <a href="#07">**``**</a>
@@ -280,16 +280,57 @@ p
 }
 ```
 
+:star: margin(外边距)    
+margin 清除周围的（外边框）元素区域。margin 没有背景颜色，是完全透明的。
+margin 可以单独改变元素的上，下，左，右边距，也可以一次改变所有的属性。
+
+可能的值
+
+|值|说明|
+|:--|:--|
+|auto|结果依赖于浏览器|
+|length|定义一个固定的margin（使用像素，pt，em、cm等）|
+|%|定义一个使用百分比的边距|
+
+:star: padding(填充)
+
+|||
+|:--|:--|
+|length|定义一个固定的填充(像素, pt, em,等)|
+|%|使用百分比值定义一个填充|
+
 
 ---
-### &nbsp;&nbsp; <a id="03"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
+### &nbsp;&nbsp; <a id="03">分组和嵌套选择器</a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
 
-:star: 
+:star: 分组选择器
+```css
+h1,h2,p
+{
+    color:green;
+}
+```
+
+
+
+:star:嵌套选择器
+
+在下面的例子设置了三个样式：
+-  p{ }: 为所有 p 元素指定一个样式。
+- .marked{ }: 为所有 class="marked" 的元素指定一个样式。
+- .marked p{ }: 为所有 class="marked" 元素内的 p 元素指定一个样式。
+- p.marked{ }: 为所有 class="marked" 的 p 元素指定一个样式。
+
+
 
 ---
-### &nbsp;&nbsp; <a id="04"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
+### &nbsp;&nbsp; <a id="04">定位</a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
 
-:star: 
+:star: 尺寸
+
+1. 设置元素的高度`Height:20px Width`
+2.  百分比设置`Height:50%`
+3. 
 
 ---
 ### &nbsp;&nbsp; <a id="05"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
