@@ -6,10 +6,8 @@
 - [x] <a href="#02">**`边距`**</a>
 - [x] <a href="#03">**`分组和嵌套选择器`**</a>
 - [x] <a href="#04">**`定位`**</a>
-- [x] <a href="#05">**``**</a>
-- [x] <a href="#06">**``**</a>
-- [x] <a href="#07">**``**</a>
-- [x] <a href="#08">**``**</a>
+- [x] <a href="#05">**`组合选择符`**</a>
+
 
 ### &nbsp;&nbsp; <a id="01">各种属性</a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
 
@@ -326,32 +324,248 @@ h1,h2,p
 ---
 ### &nbsp;&nbsp; <a id="04">定位</a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
 
-:star: 尺寸
+:star: 尺寸(Dimension)
 
 1. 设置元素的高度`Height:20px Width`
-2.  百分比设置`Height:50%`
-3. 
+2. 百分比设置`Height:50%`
+3. 像素`Height:20--也是像素`
+4. 元素最大高度`max-Hieght:20`
+5. 百分比最大高度`max-Height:50%`
+6. 最低高度`min-Height:20`
+
+:star:显示(display)与可见性(Visibility)
+
+```css
+h1.hidden {visibility:hidden;}  --这样做只是隐藏元素，但原本元素仍要占据原本的空间。
+```
+
+```
+h1.hidden {display:none;}   --这样做就能让某个元素'消失',意味着不会占用空间了。
+```
+
+
+- 块和内联元素
+
+块元素是一个元素，占用了全部宽度，在前后都是换行符。    
+块元素的例子：   
+- <h1> 
+- <p>
+- <div>
+	
+内联元素只需要必要的宽度，不强制换行。   
+内联元素的例子：   
+- <span>
+- <a>
+
+- 改变元素显示
+```css
+li {display:inline;}  --把列表项显示为内联元素
+span {display:block;} --把span元素作为块元素
+```
+:star: Position(定位)
+
+position有5个值:
+1. static  --定位的元素，无特殊定位，遵循正常的文档流对象
+2. relative  --相对定位元素的定位是相对其正常位置。
+3. fixed   --元素的位置相对于浏览器窗口是固定位置。即使窗口是滚动的它也不会移动，不占据空间
+4. absolute  --绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于<html>
+5. sticky   --表示"粘性的"，它的行为就像 position:relative; 而当页面滚动超出目标区域时，它的表现就像 position:fixed;，它会固定在目标位置。   
+
+- 重叠的元素   
+元素的定位于文档流无关，所以他们可以覆盖页面上的其他元素    
+`z-index:number`制定了一个元素的堆叠顺序,正值往前覆盖，负值往后覆盖
+
+- 例子
+```css
+img 
+{
+	position:absolute;
+	clip:rect(0px,60px,200px,0px);   --裁剪元素的外形
+}
+```
+```css
+div.ex1 {
+    background-color: lightblue;
+    width: 110px;
+    height: 110px;
+    overflow: scroll;     --设置滚动条显示未完全显示的内容
+    overflow: hidden;	-- 隐藏未完全显示的内容
+    overflow: auto   --滚动条由浏览器决定
+    overflow: visible  --(默认)显示
+}
+```
+
+[更改光标](https://www.runoob.com/try/try.php?filename=trycss_cursor)
+
+
+:star: Float(浮动)    
+CSS 的 Float（浮动），会使元素向左或向右移动，其周围的元素也会重新排列。    
+Float（浮动），往往是用于图像，但它在布局时一样非常有用。
+
+元素的水平方向浮动，意味着元素只能左右移动而不能上下移动。一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。    
+浮动元素之后的元素将围绕它。      浮动元素之前的元素将不会受到影响。
+
+```css
+彼此相邻的浮动元素 :
+.thumbnail 
+{
+    float:left;
+    width:110px;
+    height:90px;
+    margin:5px;
+}
+```
+
+```css
+清除浮动 - 使用 clear  使元素两侧不出现浮动元素
+.text_line
+{
+    clear:both;
+}
+```
+
+:star: 对齐
+
+1. 要水平居中对齐一个元素(如 <div>), 可以使用 margin: auto;
+	
+2. 如果仅仅是为了文本在元素内居中对齐，可以使用 text-align: center;
+
+3. 要让图片居中对齐, 可以使用 margin: auto; 并将它放到 块 元素中:
+
+4. 我们可以使用 position: absolute; 属性来对齐元素  `注释：绝对定位元素会被从正常流中删除，并且能够交叠元素。`
+```css
+.right {
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    background-color: #b0e0e6;
+}
+```
+
+左右对齐 - 使用 float 方式
+```css
+.right {
+    float: right;
+    width: 300px;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+-- 如果子元素的高度大于父元素，且子元素设置了浮动，那么子元素将溢出，这时候你可以使用 "clearfix(清除浮动)" 来解决该问题。
+
+我们可以在父元素上添加 overflow: auto; 来解决子元素溢出的问题:
+
+.clearfix {
+    overflow: auto;
+}
+
+
+
+垂直居中 - 使用 position 和 transform
+除了使用 padding 和 line-height 属性外,我们还可以使用 transform 属性来设置垂直居中:
+.center { 
+    height: 200px;
+    position: relative;
+    border: 3px solid green; 
+}
+ 
+.center p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+```
+
+
+
+
+
+
 
 ---
-### &nbsp;&nbsp; <a id="05"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
+### &nbsp;&nbsp; <a id="05">组合选择符</a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
 
-:star: 
+:star: 四种组合方式
+
+1. 后代选择器(以空格分隔)
+2. 子元素选择器(以大于号分隔）
+3. 相邻兄弟选择器（以加号分隔）
+4. 普通兄弟选择器（以破折号分隔）
+
+
+- 后代选择器
+```css
+后代选择器用于选取某元素的后代元素。
+div p
+{
+  background-color:yellow;
+}
+```
+
+- 子元素选择器
+```css
+与后代选择器相比，子元素选择器（Child selectors）只能选择作为某元素子元素的元素。
+div>p
+{
+  background-color:yellow;
+}
+```
+
+- 相邻兄弟选择器
+```css
+如果需要选择紧接在另一个元素后的元素，而且二者有相同的父元素，可以使用相邻兄弟选择器
+以下实例选取了所有位于 <div> 元素后的第一个 <p> 元素:
+div+p
+{
+  background-color:yellow;
+}
+```
+
+- 普通兄弟选择器
+```css
+后续兄弟选择器选取所有指定元素之后的相邻兄弟元素。
+以下实例选取了所有 <div> 元素之后的所有相邻兄弟元素 <p> : 
+div~p
+{
+  background-color:yellow;
+}
+```
+
+
+##### :star: 伪类
+```css
+a:link {color:#FF0000;} /* 未访问的链接 */
+a:visited {color:#00FF00;} /* 已访问的链接 */
+a:hover {color:#FF00FF;} /* 鼠标划过链接 */
+a:active {color:#0000FF;} /* 已选中的链接 */
+
+
+--匹配第一个p元素
+p:first-child
+{
+    color:blue;
+}
+
+
+--选择相匹配的所有<p>元素的第一个 <i> 元素：
+p > i:first-child
+{
+    color:blue;
+}
+
+匹配所有作为第一个子元素的 <p> 元素中的所有 <i> 元素
+p:first-child i
+{
+    color:blue;
+}
+```
+[伪类集合](https://www.runoob.com/css/css-pseudo-classes.html)
+[伪元素集合](https://www.runoob.com/css/css-pseudo-elements.html)
+
 
 ---
-### &nbsp;&nbsp; <a id="06"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
 
-:star: 
-
----
-### &nbsp;&nbsp; <a id="07"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
-
-:star:
-
-### &nbsp;&nbsp; <a id="08"></a>&nbsp;&nbsp;<a href="#top">:blue_book:</a>
-
-:star:
-
----
 
 
 
